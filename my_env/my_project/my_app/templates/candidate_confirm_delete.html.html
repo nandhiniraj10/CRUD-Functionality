@@ -1,0 +1,30 @@
+<!-- candidate_confirm_delete.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete Candidate</title>
+</head>
+<body>
+    <h1>Confirm Delete Candidate</h1>
+    <p>Are you sure you want to delete the following candidate?</p>
+    <dl>
+        <dt>ID:</dt>
+        <dd>{{ candidate.id }}</dd>
+        <dt>First Name:</dt>
+        <dd>{{ candidate.first_name }}</dd>
+        <dt>Last Name:</dt>
+        <dd>{{ candidate.last_name }}</dd>
+        <dt>Email:</dt>
+        <dd>{{ candidate.email }}</dd>
+        <!-- Add other candidate details here -->
+    </dl>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+        <a href="{% url 'candidate_list' %}">Cancel</a>
+    </form>
+</body>
+</html>
